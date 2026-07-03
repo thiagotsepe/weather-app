@@ -1,4 +1,4 @@
-export function SearchBar() {
+export function SearchBar({ onSearch }) {
   return (
     <form className="w-full">
       <label className="flex py-2 px-4 rounded-3xl bg-text/15 text-base">
@@ -7,8 +7,15 @@ export function SearchBar() {
           type="text"
           placeholder="Digite a cidade"
         />
-        <button className="bg-transparent cursor-pointer border-none" type="submit">
-          <img className="size-4" src="/icons-weather/search.svg" alt="icone de busca" />
+        <button
+          className="bg-transparent cursor-pointer border-none"
+          type="submit"
+        >
+          <img
+            className="size-4"
+            src="/icons-weather/search.svg"
+            alt="icone de busca"
+          />
         </button>
       </label>
     </form>
