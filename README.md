@@ -78,10 +78,6 @@ weather-app/
 └── vite.config.js
 ```
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Sinta-se livre para usar como referência.
-
 ## 👤 Autor
 
 **Thiago Sepe** — [GitHub](https://github.com/thiagotsepe)
