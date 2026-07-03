@@ -8,6 +8,7 @@ export function WeatherCard({ weather }) {
       </header>
       <div className="flex flex-col items-center">
         <img
+          className="w-20 h-20"
           src={`/icons-weather/${weather.condition_slug}.svg`}
           alt={weather.condition}
         />
