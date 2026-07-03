@@ -4,7 +4,7 @@ Aplicação web para consulta de previsão do tempo por cidade, construída com 
 
 ## 🔗 Demo
 
-🔴 **[Acesse o projeto ao vivo](https://thiagotsepe.github.io/weather-app/)**
+🔴 **[Acesse o projeto ao vivo](https://weather-app-two-lemon-29-sigma.vercel.app/)**
 
 ## ✨ Funcionalidades
 
