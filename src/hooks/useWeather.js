@@ -6,6 +6,7 @@ function useWeather(city) {
   const [weather, setWeather] = useState(null);
   const [forecasts, setForecasts] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   function applyResults(data) {
     setWeather(data.results);
@@ -13,6 +14,7 @@ function useWeather(city) {
   }
 
   async function fetchWeather(url) {
+    setLoading(true);
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -24,6 +26,8 @@ function useWeather(city) {
     } catch (error) {
       console.error("Erro ao buscar dados da API:", error);
       setError("Erro ao buscar dados da API");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -32,6 +36,7 @@ function useWeather(city) {
 
     if (!("geolocation" in navigator)) {
       setError("Geolocalização não suportada pelo navegador.");
+      setLoading(false);
       return;
     }
 
@@ -45,19 +50,20 @@ function useWeather(city) {
       (error) => {
         console.error("Erro de geolocalização:", error);
         setError("Permissão de localização negada");
+        setLoading(false);
       },
     );
   }, []);
 
   useEffect(() => {
-    
+    if (!city) return;
 
     fetchWeather(
       `https://api.hgbrasil.com/weather?format=json-cors&key=${API_KEY}&city_name=${city}`,
     );
   }, [city]);
 
-  return { weather, forecasts, error}
+  return { weather, forecasts, error, loading };
 }
 
-export default useWeather
+export default useWeather;

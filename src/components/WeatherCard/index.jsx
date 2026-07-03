@@ -1,9 +1,9 @@
 export function WeatherCard({ weather }) {
   return (
     <div className="flex flex-col gap-6 p-4 rounded-3xl bg-primary">
-      <header className="flex justify-center">
+      <header className="flex flex-col items-center">
         <h2 className="text-base font-semibold">
-          Hoje ({weather.forecast[0].date})
+          Hoje ({weather.forecast[0].date}) - {weather.forecast[0].weekday}
         </h2>
       </header>
       <div className="flex flex-col items-center">
